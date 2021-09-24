@@ -128,6 +128,7 @@ void ShutdownDNS(DNSHandle hDNS)
         {
             //       printf(" element "); //*
             Node* temp_2 = temp->next_node;
+            free(temp->domen);
             free(temp);
             temp = temp_2;
         }
