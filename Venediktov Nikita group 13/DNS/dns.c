@@ -10,7 +10,7 @@
 #include "dns.h"
 #include <stdio.h>
 
-typedef struct _Node
+typedef struct _Node   // element of hash-table
 {
     char* domen;
     IPADDRESS ip;
@@ -22,11 +22,11 @@ const int SIZE = 13000;   //size of array of pointers on nodes
 DNSHandle InitDNS()
 {
     DNSHandle hDNS = (DNSHandle)(Node**)calloc(SIZE, sizeof(Node*));
-    if ((Node**)hDNS != NULL)
+    if ((Node**)hDNS != NULL)  
         return hDNS;
-    return (DNSHandle)0;
+    return (DNSHandle)0;  // case of OS does not provide with memory
 }
-int getHash(const char* domen)
+unsigned int getHash(const char* domen)
 {
 
     unsigned int len = strlen(domen);
@@ -35,9 +35,9 @@ int getHash(const char* domen)
         mul = (i % 4 == 0) ? 1 : mul * 256;
         sum += (domen[i]) * mul;
     }
-    return (int)(abs(sum) % SIZE);
+    return (unsigned int)(abs(sum) % SIZE);
 }
-Node* NodeInicialisation(const char* domen, IPADDRESS ip, int domen_length)
+Node* NodeInicialisation(const char* domen, IPADDRESS ip, int domen_length) // "constructor" of node struct
 {
     Node* node = (Node*)malloc(sizeof(Node));
     node->domen = (char*)malloc((domen_length + 1) * sizeof(char));
@@ -51,14 +51,14 @@ void InsertToServer(DNSHandle hDNS, const char* domen, IPADDRESS ip)
         return;
     unsigned int index = getHash(domen);
     unsigned int domen_length = strlen(domen);
-    if (((Node**)hDNS)[index] == NULL)
+    if (((Node**)hDNS)[index] == NULL)  // cell is empty
     {
         ((Node**)hDNS)[index] = NodeInicialisation(domen, ip, domen_length);
         ((Node**)hDNS)[index]->next_node = NULL;
     }
-    else if (((Node**)hDNS)[index] != NULL)
+    else if (((Node**)hDNS)[index] != NULL)    // cell is not empty
     {
-        /* Node* temp = ((Node**)hDNS)[index];
+        /* Node* temp = ((Node**)hDNS)[index];       // detour to find nides with the same domen and remove them
          while (temp != NULL)
          {
              if (strcmp(temp->domen, domen) == 0)
@@ -77,12 +77,12 @@ void InsertToServer(DNSHandle hDNS, const char* domen, IPADDRESS ip)
 
 
 
-void LoadHostsFile(DNSHandle hDNS, const char* hostsFilePath)
+void LoadHostsFile(DNSHandle hDNS, const char* hostsFilePath)  
 {
     FILE* file = NULL;
     file = fopen(hostsFilePath, "r");
     if (file == NULL)
-        return;
+        return;    // there is an opportunity to use CEXCEPTION_T but we can't change main file
     unsigned int ip1 = 0, ip2 = 0, ip3 = 0, ip4 = 0;
     char temp_domen[201];
     while (fscanf_s(file, "%d.%d.%d.%d %s", &ip1, &ip2, &ip3, &ip4, temp_domen, 200) != EOF)
