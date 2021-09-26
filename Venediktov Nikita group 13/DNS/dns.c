@@ -29,7 +29,11 @@ DNSHandle InitDNS()
 unsigned int getHash(const char* domen)
 {
 
+    if (domen == NULL)
+        return -1;
     unsigned int len = strlen(domen);
+    if (len == 0)
+        return -1;
     long sum = 0, mul = 1;
     for (int i = 0; i < len; ++i) {
         mul = (i % 4 == 0) ? 1 : mul * 256;
@@ -50,6 +54,8 @@ void InsertToServer(DNSHandle hDNS, const char* domen, IPADDRESS ip)
     if ((Node**)hDNS == NULL || domen == NULL)
         return;
     unsigned int index = getHash(domen);
+    if (index == -1)
+        return;
     unsigned int domen_length = strlen(domen);
     if (((Node**)hDNS)[index] == NULL)  // cell is empty
     {
@@ -79,10 +85,12 @@ void InsertToServer(DNSHandle hDNS, const char* domen, IPADDRESS ip)
 
 void LoadHostsFile(DNSHandle hDNS, const char* hostsFilePath)  
 {
+    if ((Node**)hDNS == NULL || hostsFilePath == NULL)
+        return;  // *
     FILE* file = NULL;
     file = fopen(hostsFilePath, "r");
     if (file == NULL)
-        return;    // there is an opportunity to use CEXCEPTION_T but we can't change main file
+        return;    //*there is an opportunity to use CEXCEPTION_T but we can't change main file
     unsigned int ip1 = 0, ip2 = 0, ip3 = 0, ip4 = 0;
     char temp_domen[201];
     while (fscanf_s(file, "%d.%d.%d.%d %s", &ip1, &ip2, &ip3, &ip4, temp_domen, 200) != EOF)
@@ -110,6 +118,8 @@ IPADDRESS DnsLookUp(DNSHandle hDNS, const char* hostName)
 
 void ShutdownDNS(DNSHandle hDNS)
 {
+    if((Node**)hDNS == NULL)
+       return;
     for (unsigned int i = 0; i < SIZE; ++i)
     {
         Node* temp = ((Node**)hDNS)[i];
