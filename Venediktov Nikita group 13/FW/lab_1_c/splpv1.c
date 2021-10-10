@@ -122,7 +122,7 @@ const char base64[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
 int command_index;
 const char* cmd_commands[] = { "GET_DATA", "GET_FILE", "GET_COMMAND" };
-
+const int commands_lenghts[] = { 8, 8, 11 };
 enum test_status invalid_message()
 {
 	current_state = 1;
@@ -201,7 +201,8 @@ enum test_status validate_message(struct Message* msg)
 		}
 		else if (current_state == 5) 
 		{
-			int len = strlen(cmd_commands[command_index]);
+			//int len = strlen(cmd_commands[command_index]);
+			int len = commands_lenghts[command_index];
 			if (!strncmp(message, cmd_commands[command_index], len))
 			{
 				message += len;
@@ -214,12 +215,12 @@ enum test_status validate_message(struct Message* msg)
 				{
 					++message;
 				}
-				if (*message != ' ')
+				/*if (*message != ' ')
 				{
 					return invalid_message();
 				}
-				++message;
-				if (!strcmp(message, cmd_commands[command_index])) 
+			    ++message;*/
+				if (*message == ' ' && !strcmp(++message, cmd_commands[command_index])) 
 				{
 					return valid_message(3);
 				}

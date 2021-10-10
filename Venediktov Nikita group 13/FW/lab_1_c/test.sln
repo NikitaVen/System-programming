@@ -7,12 +7,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test.vcxproj", "{9C
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
 		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C2B8010-88CC-4128-8764-9DE80CC264D7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{9C2B8010-88CC-4128-8764-9DE80CC264D7}.Debug|ARM.Build.0 = Debug|ARM
 		{9C2B8010-88CC-4128-8764-9DE80CC264D7}.Debug|x86.ActiveCfg = Debug|Win32
 		{9C2B8010-88CC-4128-8764-9DE80CC264D7}.Debug|x86.Build.0 = Debug|Win32
+		{9C2B8010-88CC-4128-8764-9DE80CC264D7}.Release|ARM.ActiveCfg = Release|ARM
+		{9C2B8010-88CC-4128-8764-9DE80CC264D7}.Release|ARM.Build.0 = Release|ARM
 		{9C2B8010-88CC-4128-8764-9DE80CC264D7}.Release|x86.ActiveCfg = Release|Win32
 		{9C2B8010-88CC-4128-8764-9DE80CC264D7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
