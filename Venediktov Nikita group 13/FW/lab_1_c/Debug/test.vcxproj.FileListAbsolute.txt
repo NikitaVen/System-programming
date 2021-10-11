@@ -1,0 +1,4 @@
+D:\2 курс\Системное программирование\System-programming\Venediktov Nikita group 13\FV\lab_1_c\Debug\test.exe
+D:\2 курс\Системное программирование\System-programming\Venediktov Nikita group 13\FV\lab_1_c\Debug\test.pdb
+D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\FW\lab_1_c\Debug\test.exe
+D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\FW\lab_1_c\Debug\test.pdb
