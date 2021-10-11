@@ -1,0 +1,5 @@
+﻿  main.c
+  splpv1.c
+  Создание кода...
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1316,5): warning MSB8012: TargetPath(D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\FW\lab_1_c\ARM\Release\test.exe) не соответствует значению свойства выходного файла (D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\FW\lab_1_c\Release\test.exe) для Linker. Это может привести к неправильной сборке проекта. Чтобы исправить это, убедитесь, что значения свойств $(OutDir), $(TargetName) и $(TargetExt) соответствуют значению, указанному в %(Link.OutputFile).
+.\Release\main.obj : fatal error LNK1112: тип компьютера модуля "x86" конфликтует с типом целевого компьютера "ARM"
