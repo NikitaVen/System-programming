@@ -1,0 +1,2 @@
+D:\Лабораторная работа №3\Lab3\ProcessB\Debug\ProcessB.exe
+D:\Лабораторная работа №3\Lab3\ProcessB\Debug\ProcessB.pdb

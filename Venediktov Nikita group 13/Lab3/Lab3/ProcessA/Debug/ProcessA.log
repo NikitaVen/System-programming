@@ -1,0 +1,9 @@
+﻿  ProcessA.c
+D:\Лабораторная работа №3\Lab3\ProcessA\ProcessA.c(186,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\Лабораторная работа №3\Lab3\ProcessA\ProcessA.c(195,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\Лабораторная работа №3\Lab3\ProcessA\ProcessA.c(202,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\Лабораторная работа №3\Lab3\ProcessA\ProcessA.c(209,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\Лабораторная работа №3\Lab3\ProcessA\ProcessA.c(216,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\Лабораторная работа №3\Lab3\ProcessA\ProcessA.c(223,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\Лабораторная работа №3\Lab3\ProcessA\ProcessA.c(230,2): warning C4098: main: функция типа "void", возвращающая значение
+  ProcessA.vcxproj -> D:\Лабораторная работа №3\Lab3\ProcessA\Debug\ProcessA.exe

@@ -1,0 +1,14 @@
+﻿  ProcessA.c
+D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab3\Lab3\ProcessA\ProcessA.c(67,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab3\Lab3\ProcessA\ProcessA.c(77,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab3\Lab3\ProcessA\ProcessA.c(84,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab3\Lab3\ProcessA\ProcessA.c(91,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab3\Lab3\ProcessA\ProcessA.c(97,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab3\Lab3\ProcessA\ProcessA.c(104,3): warning C4098: main: функция типа "void", возвращающая значение
+D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab3\Lab3\ProcessA\ProcessA.c(112,2): warning C4098: main: функция типа "void", возвращающая значение
+  Создание кода
+  1 of 7 functions (14.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  ProcessA.vcxproj -> D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab3\Lab3\ProcessA\Release\ProcessA.exe
