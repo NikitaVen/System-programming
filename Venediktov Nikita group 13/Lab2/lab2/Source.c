@@ -65,6 +65,7 @@ BOOL GetProcessList()
 		_tprintf(TEXT("\n  THREAD COUNT      = %d"), pe.cntThreads);
 		_tprintf(TEXT("\n  Parent PROCESS ID = 0x%08X"), pe.th32ParentProcessID);
 		_tprintf(TEXT("\n  PRIORITY BASE     = %d"), pe.pcPriClassBase);
+		_tprintf(TEXT("\n  MODULE COUNT      = %d"), ModuleCount(pe.th32ProcessID));
 
 		//displaying modules and threads of parcitular processes
 		ListProcessModules(pe.th32ProcessID);
@@ -75,6 +76,36 @@ BOOL GetProcessList()
 	CloseHandle(ProcessSnap);
 
 	return TRUE;
+}
+
+int ModuleCount(DWORD PID)
+{
+	HANDLE ModuleSnap = INVALID_HANDLE_VALUE;
+	MODULEENTRY32 me;
+
+	ModuleSnap = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, PID);
+	if (ModuleSnap == INVALID_HANDLE_VALUE)
+	{
+		return 0;
+	}
+
+	me.dwSize = sizeof(MODULEENTRY32); 
+
+	if (!Module32First(ModuleSnap, &me))
+	{
+		printError(TEXT("Module32First"));
+		CloseHandle(ModuleSnap);
+		return 0;
+	}
+	int amount = 0;
+	do
+	{
+		++amount;
+	} while (Module32Next(ModuleSnap, &me));
+
+	CloseHandle(ModuleSnap);
+
+	return amount;
 }
 
 BOOL ListProcessModules(DWORD PID)

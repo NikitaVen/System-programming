@@ -1,1 +1,3 @@
-﻿  lab2.vcxproj -> D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab2\lab2\Debug\lab2.exe
+﻿  Source.c
+D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab2\lab2\Source.c(68,59): warning C4013: ModuleCount: нет определения; предполагается "extern" с возвратом типа "int"
+  lab2.vcxproj -> D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab2\lab2\Debug\lab2.exe

